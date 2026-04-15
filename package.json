@@ -1,0 +1,25 @@
+{
+  "name": "banking-system",
+  "version": "1.0.0",
+  "description": "Production-quality Express Banking System using custom LinkedList and BST",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "node --test tests/banking.test.js",
+    "demo": "node demo.js"
+  },
+  "keywords": [
+    "banking",
+    "express",
+    "data-structures",
+    "bst",
+    "linked-list"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

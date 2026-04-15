@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account | SwiftCap</title>
+    <link rel="stylesheet" href="/app/assets/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="navbar">
+        <div class="brand">
+          <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <h1>SwiftCap</h1>
+            <p>Next-Gen Financial Platform</p>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="/app">Overview</a>
+          <a href="/app/create-account" class="active">Create</a>
+          <a href="/app/balance">Balance</a>
+          <a href="/app/transfer">Transfer</a>
+          <a href="/app/accounts">Ledger</a>
+        </nav>
+      </header>
+
+      <main class="page">
+        <section class="header">
+          <h2>Create Account</h2>
+          <p>Endpoint: POST /api/bank/create-account</p>
+        </section>
+
+        <section class="grid-2">
+          <article class="card">
+            <h3>New Account Form</h3>
+            <form id="createAccountForm">
+              <label>
+                Account Number
+                <input id="accountNumber" type="number" min="1" required />
+              </label>
+              <label>
+                Initial Balance
+                <input id="initialBalance" type="number" min="1" step="0.01" required />
+              </label>
+              <button class="btn-primary" type="submit">Create Account</button>
+            </form>
+          </article>
+          <article class="card">
+            <h3>Validation Rules</h3>
+            <div class="code-box">- Account number must be a positive integer
+- Initial balance must be positive
+- Initial balance must meet minimum opening balance
+- Duplicate account numbers are rejected</div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <aside id="toast" class="toast" aria-live="polite"></aside>
+
+    <script src="/app/js/common.js"></script>
+    <script src="/app/js/create-account.js"></script>
+  </body>
+</html>

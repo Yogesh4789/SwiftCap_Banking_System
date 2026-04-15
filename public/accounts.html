@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Ledger | SwiftCap</title>
+    <link rel="stylesheet" href="/app/assets/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="navbar">
+        <div class="brand">
+          <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <h1>SwiftCap</h1>
+            <p>Next-Gen Financial Platform</p>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="/app">Overview</a>
+          <a href="/app/create-account">Create</a>
+          <a href="/app/balance">Balance</a>
+          <a href="/app/transfer">Transfer</a>
+          <a href="/app/accounts" class="active">Ledger</a>
+        </nav>
+      </header>
+
+      <main class="page">
+        <section class="header">
+          <h2>Accounts Explorer</h2>
+          <p>Endpoints: GET /api/bank/accounts and GET /api/bank/accounts/:id</p>
+        </section>
+
+        <section class="card">
+          <div class="inline-actions">
+            <button id="refreshBtn" class="btn-secondary" type="button">Refresh Accounts</button>
+            <span id="accountCount" class="pill">0 accounts</span>
+          </div>
+          <div class="table-wrap" style="margin-top: 0.8rem">
+            <table>
+              <thead>
+                <tr>
+                  <th>Account #</th>
+                  <th>Balance</th>
+                  <th>Created At</th>
+                </tr>
+              </thead>
+              <tbody id="accountsBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="grid-2">
+          <article class="card">
+            <h3>Lookup Account By ID</h3>
+            <form id="accountLookupForm">
+              <label>
+                Account Number
+                <input id="lookupAccountNumber" type="number" min="1" required />
+              </label>
+              <button class="btn-primary" type="submit">Fetch Account</button>
+            </form>
+          </article>
+          <article class="card">
+            <h3>Account Detail</h3>
+            <div id="accountLookupResult" class="code-box">No lookup performed yet.</div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <aside id="toast" class="toast" aria-live="polite"></aside>
+
+    <script src="/app/js/common.js"></script>
+    <script src="/app/js/accounts.js"></script>
+  </body>
+</html>

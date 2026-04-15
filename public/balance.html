@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balance Inquiry | SwiftCap</title>
+    <link rel="stylesheet" href="/app/assets/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="navbar">
+        <div class="brand">
+          <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <h1>SwiftCap</h1>
+            <p>Next-Gen Financial Platform</p>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="/app">Overview</a>
+          <a href="/app/create-account">Create</a>
+          <a href="/app/balance" class="active">Balance</a>
+          <a href="/app/transfer">Transfer</a>
+          <a href="/app/accounts">Ledger</a>
+        </nav>
+      </header>
+
+      <main class="page">
+        <section class="header">
+          <h2>Balance Lookup</h2>
+          <p>Endpoint: GET /api/bank/balance/:id</p>
+        </section>
+
+        <section class="grid-2">
+          <article class="card">
+            <h3>Check Balance</h3>
+            <form id="balanceForm">
+              <label>
+                Account Number
+                <input id="balanceAccountNumber" type="number" min="1" required />
+              </label>
+              <button class="btn-primary" type="submit">Fetch Balance</button>
+            </form>
+          </article>
+          <article class="card">
+            <h3>Result</h3>
+            <div id="balanceResult" class="code-box">No lookup performed yet.</div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <aside id="toast" class="toast" aria-live="polite"></aside>
+
+    <script src="/app/js/common.js"></script>
+    <script src="/app/js/balance.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftCap | Control Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/app/assets/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="navbar">
+        <div class="brand">
+          <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <h1>SwiftCap</h1>
+            <p>Next-Gen Financial Platform</p>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="/app" class="active">Overview</a>
+          <a href="/app/create-account">Create</a>
+          <a href="/app/balance">Balance</a>
+          <a href="/app/transfer">Transfer</a>
+          <a href="/app/accounts">Ledger</a>
+        </nav>
+      </header>
+
+      <main class="page">
+        <section class="header">
+          <h2>Overview</h2>
+          <p>Dedicated pages are available for every banking endpoint.</p>
+        </section>
+
+        <section class="grid-3">
+          <article class="card kpi">
+            <p>Total Accounts</p>
+            <strong id="kpiAccounts">0</strong>
+          </article>
+          <article class="card kpi">
+            <p>Total Bank Balance</p>
+            <strong id="kpiTotal">₹0.00</strong>
+          </article>
+          <article class="card kpi">
+            <p>Average Balance</p>
+            <strong id="kpiAverage">₹0.00</strong>
+          </article>
+        </section>
+
+        <section class="links-grid">
+          <a class="quick-link" href="/app/create-account">
+            <strong>Create Account</strong>
+            <p>Endpoint: POST /api/bank/create-account</p>
+          </a>
+          <a class="quick-link" href="/app/balance">
+            <strong>Balance Check</strong>
+            <p>Endpoint: GET /api/bank/balance/:id</p>
+          </a>
+          <a class="quick-link" href="/app/transfer">
+            <strong>Transfer Money</strong>
+            <p>Endpoint: POST /api/bank/transfer</p>
+          </a>
+          <a class="quick-link" href="/app/accounts">
+            <strong>Accounts Explorer</strong>
+            <p>Endpoints: GET /api/bank/accounts and /api/bank/accounts/:id</p>
+          </a>
+        </section>
+
+        <section class="card">
+          <h3>Recent Accounts</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Account #</th>
+                  <th>Balance</th>
+                  <th>Created At</th>
+                </tr>
+              </thead>
+              <tbody id="recentAccountsBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <aside id="toast" class="toast" aria-live="polite"></aside>
+
+    <script src="/app/js/common.js"></script>
+    <script src="/app/js/dashboard.js"></script>
+  </body>
+</html>
